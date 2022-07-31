@@ -4,7 +4,6 @@ import moment from "moment";
 import { IPostDetails } from "../interface";
 
 const PostDetail = ({ post }: { post: IPostDetails }) => {
-  console.log(post);
   const getContentFragment = (index: any, text: any, obj: any, type?: any) => {
     let modifiedText = text;
 
