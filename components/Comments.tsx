@@ -15,7 +15,7 @@ const Comments = ({slug}: {slug: string}) => {
     </h3>
     <div className='flex flex-col gap-2'>
         {comments.map((comment) =>(
-          <div className='flex flex-col gap-1'>
+          <div className='flex flex-col gap-1' key={comment.comment}>
               <div className='flex gap-2 items-center'>
                 <span className='font-bold text-lg'>{comment.name}</span>
                 <span className='italic text-gray-500 text-sm'> {moment(comment.createdAt).format('MMM DD, YYYY')}</span>
