@@ -53,3 +53,15 @@ export interface IPostDetails{
     featuredPost: Boolean
     content: any
 }
+export interface ICommentData{
+    comment?: string
+    name?: string
+    email?: string
+    storeData?: boolean  
+}
+
+export interface IComment{
+    comment?: string
+    name?: string
+    createdAt: string
+}

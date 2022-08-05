@@ -24,7 +24,7 @@ const Header = () => {
         </button>
         <div className="hidden md:flex md:items-center md:gap-3">
           {categories.map((category) => (
-            <Link href={`category/${category.slug}`} key={category.slug}>
+            <Link href={`/category/${category.slug}`} key={category.slug}>
               <span className="cursor-pointer font-semibold text-white hover:scale-105 transition-all duration-300">
                 {category.name}
               </span>

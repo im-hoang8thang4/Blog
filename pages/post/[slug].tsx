@@ -1,12 +1,11 @@
 import { GetServerSideProps } from "next";
 import { Categories, PostWidget } from "../../components";
-import AdjacentPosts from "../../components/AdjacentPosts";
 import AuthorCard from "../../components/AuthorCard";
 import Comments from "../../components/Comments";
 import CommentsForm from "../../components/CommentsForm";
 import PostDetail from "../../components/PostDetail";
 import { IPost, IPostDetails } from "../../interface";
-import { getPostDetails, getPosts } from "../../services";
+import { getPostDetails } from "../../services";
 
 const PostDetails = ({ post }: { post: IPostDetails }) => {
   return (
@@ -15,9 +14,8 @@ const PostDetails = ({ post }: { post: IPostDetails }) => {
         <div className="col-span-1 lg:col-span-8 ">
           <PostDetail post={post} />
           <AuthorCard author={post.author} />
-          <AdjacentPosts />
-          <CommentsForm />
-          <Comments />
+          <CommentsForm slug = {post.slug}/>
+          <Comments slug = {post.slug} />
         </div>
         <div className="lg:col-span-4 col-span-1">
           <div className="lg:sticky relative top-8 lg:w-4/5 lg:ml-6">
@@ -46,22 +44,3 @@ export const getServerSideProps: GetServerSideProps<
     },
   };
 };
-
-// export async function getStaticProps({ params }: { params: any }) {
-//   const data = await getPostDetails(params.slug);
-//   return {
-//     props: {
-//       post: data,
-//     },
-//   };
-// }
-
-// export async function getStaticPaths() {
-//   const posts = await getPosts();
-//   return {
-//     paths: posts.map(({ node: { slug } }: { node: { slug: string } }) => ({
-//       params: { slug },
-//     })),
-//     fallback: true,
-//   };
-// }
