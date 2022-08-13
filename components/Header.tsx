@@ -22,7 +22,7 @@ const Header = () => {
         <button className="md:hidden" >
           <FcList fontSize={28} className='text-blue-200'/>
         </button>
-        <div className="hidden md:flex md:items-center md:gap-3">
+        <div className="hidden md:flex md:items-center md:gap-5">
           {categories.map((category) => (
             <Link href={`/category/${category.slug}`} key={category.slug}>
               <span className="cursor-pointer font-semibold text-white hover:scale-105 transition-all duration-300">

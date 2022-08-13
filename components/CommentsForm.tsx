@@ -120,7 +120,7 @@ const CommentsForm = ({ slug }: { slug: string }) => {
             <Spinner />
           </>
         ) : (
-          <button className="py-2 px-4 rounded-xl bg-pink-500" onClick={Submit}>
+          <button className="py-2 px-4 rounded-xl bg-pink-500 text-white hover:bg-pink-700 hover:text-black transition-all duration-150 hover:scale-105" onClick={Submit}>
             Gửi bình luận
           </button>
         )}

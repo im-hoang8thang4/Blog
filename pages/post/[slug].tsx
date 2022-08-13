@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import { Categories, PostWidget } from "../../components";
 import AuthorCard from "../../components/AuthorCard";
 import Comments from "../../components/Comments";
@@ -10,6 +11,10 @@ import { getPostDetails } from "../../services";
 const PostDetails = ({ post }: { post: IPostDetails }) => {
   return (
     <div className="container mx-auto px-10 mb-8">
+        <Head>
+        <title>{post.title}</title>
+      </Head>
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="col-span-1 lg:col-span-8 ">
           <PostDetail post={post} />
