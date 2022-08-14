@@ -1,16 +1,14 @@
-import type { GetServerSideProps, GetStaticProps, InferGetServerSidePropsType, NextPage } from "next";
 import Head from "next/head";
-import { useEffect } from "react";
 import { Categories, PostCard, PostWidget } from "../components";
-import { IPost, RecentPost } from "../interface";
+import { IPost } from "../interface";
 import FeaturedPosts from "../sections/FeaturedPosts";
-import { getPosts, getRecentPosts } from "../services";
+import { getPosts } from "../services";
 interface Props{
   posts: IPost[]
 }
 const Home = (props: Props)=> {
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className="container mx-auto md:px-10 px-3 mb-8">
       <Head>
         <title>Blog của Hoàng</title>
       </Head>

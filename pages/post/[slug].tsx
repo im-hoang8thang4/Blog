@@ -10,7 +10,7 @@ import { getPostDetails } from "../../services";
 
 const PostDetails = ({ post }: { post: IPostDetails }) => {
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className="container mx-auto md:px-10 px-3 mb-8">
         <Head>
         <title>{post.title}</title>
       </Head>
